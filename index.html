@@ -1,0 +1,342 @@
+<!DOCTYPE html>  <html lang="pt-PT">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">  
+    <title>Academia Albert - Educação de Elite em Moçambique</title>  <!-- Meta Tags para Mobile/PWA -->  
+<meta name="theme-color" content="#1e3a8a">  
+<meta name="apple-mobile-web-app-capable" content="yes">  
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">  
+  
+<!-- Tailwind CSS via CDN -->  
+<script src="https://cdn.tailwindcss.com"></script>  
+<script>  
+    tailwind.config = {  
+        darkMode: 'class',  
+        theme: {  
+            extend: {  
+                colors: {  
+                    primary: '#1e3a8a',  
+                    secondary: '#3b82f6',  
+                    accent: '#6366f1'  
+                }  
+            }  
+        }  
+    }  
+</script>  
+
+<!-- Fontes Profissionais -->  
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">  
+  
+<style>  
+    body {  
+        font-family: 'Plus Jakarta Sans', sans-serif;  
+        scroll-behavior: smooth;  
+    }  
+    h1, h2, h3, h4 {  
+        font-family: 'Outfit', sans-serif;  
+    }  
+    .gradient-mesh {  
+        background-color: #ffffff;  
+        background-image:   
+            radial-gradient(at 0% 0%, hsla(225,100%,95%,1) 0, transparent 50%),   
+            radial-gradient(at 50% 0%, hsla(225,100%,90%,1) 0, transparent 50%),   
+            radial-gradient(at 100% 0%, hsla(225,100%,95%,1) 0, transparent 50%);  
+    }  
+    .glass {  
+        background: rgba(255, 255, 255, 0.7);  
+        backdrop-filter: blur(12px);  
+        -webkit-backdrop-filter: blur(12px);  
+        border: 1px solid rgba(255, 255, 255, 0.3);  
+    }  
+    .gradient-primary {  
+        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);  
+    }  
+    .animate-float {  
+        animation: float 6s ease-in-out infinite;  
+    }  
+    @keyframes float {  
+        0%, 100% { transform: translateY(0); }  
+        50% { transform: translateY(-20px); }  
+    }  
+    .no-scrollbar::-webkit-scrollbar { display: none; }  
+</style>
+
+</head>  
+<body class="gradient-mesh text-slate-900 min-h-screen">  <!-- Navegação -->  
+<nav id="navbar" class="fixed top-0 left-0 w-full z-[100] transition-all duration-500 py-8">  
+    <div class="max-w-7xl mx-auto px-4">  
+        <div class="glass rounded-3xl px-6 h-20 flex justify-between items-center shadow-sm">  
+            <div class="flex items-center cursor-pointer group">  
+                <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white font-black text-xl mr-3">A</div>  
+                <span class="text-xl font-black bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary tracking-tight">Academia Albert</span>  
+            </div>  
+
+            <!-- Desktop Menu -->  
+            <div class="hidden lg:flex items-center space-x-1">  
+                <a href="#home" class="px-5 py-2 rounded-xl text-slate-600 hover:text-primary font-bold transition-colors">Início</a>  
+                <a href="#cursos" class="px-5 py-2 rounded-xl text-slate-600 hover:text-primary font-bold transition-colors">Cursos</a>  
+                <a href="#sobre" class="px-5 py-2 rounded-xl text-slate-600 hover:text-primary font-bold transition-colors">Sobre</a>  
+                <div class="h-6 w-px bg-slate-200 mx-2"></div>  
+                <button class="text-primary font-black px-6 py-3 hover:bg-indigo-50 rounded-xl transition-all">Entrar</button>  
+                <button class="bg-slate-900 text-white px-8 py-3 rounded-xl font-black hover:bg-black transition-all shadow-lg active:scale-95">Registar</button>  
+            </div>  
+
+            <!-- Mobile Trigger -->  
+            <button id="menu-btn" class="lg:hidden w-12 h-12 flex items-center justify-center text-slate-900">  
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">  
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />  
+                </svg>  
+            </button>  
+        </div>  
+    </div>  
+
+    <!-- Mobile Menu Overlay -->  
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-[90] pt-32 px-6 flex flex-col space-y-4">  
+        <a href="#home" class="p-6 text-2xl font-black bg-slate-50 rounded-3xl">Início</a>  
+        <a href="#cursos" class="p-6 text-2xl font-black bg-slate-50 rounded-3xl">Cursos</a>  
+        <button class="p-6 bg-primary text-white rounded-3xl font-black">Começar Agora</button>  
+        <button id="close-menu" class="p-4 text-slate-400 font-bold uppercase tracking-widest text-center mt-auto mb-10">Fechar Menu</button>  
+    </div>  
+</nav>  
+
+<!-- Hero Section -->  
+<section id="home" class="relative pt-48 pb-32 lg:pt-64 lg:pb-52 overflow-hidden">  
+    <div class="max-w-7xl mx-auto px-4 text-center">  
+        <div class="inline-flex items-center gap-3 px-5 py-2.5 bg-indigo-50 text-primary rounded-full text-[10px] font-black uppercase tracking-[0.2em] border border-indigo-100 shadow-sm mb-12">  
+            🚀 LÍDER EM FORMAÇÃO PROFISSIONAL  
+        </div>  
+          
+        <h1 class="text-6xl lg:text-[8rem] font-black leading-[0.85] tracking-tighter text-slate-900 mb-12">  
+            REDEFINA SEU <br />  
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">POTENCIAL.</span>  
+        </h1>  
+          
+        <p class="text-xl lg:text-2xl text-slate-500 font-medium leading-relaxed max-w-2xl mx-auto mb-16">  
+            Capacitação prática com reconhecimento nacional. Junte-se à elite dos profissionais moçambicanos formados pela Academia Albert.  
+        </p>  
+          
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-6">  
+            <a href="#cursos" class="w-full sm:w-auto px-12 py-6 bg-primary text-white rounded-[2rem] font-black text-xl hover:bg-indigo-700 shadow-[0_20px_40px_rgba(30,58,138,0.3)] transition-all active:scale-95">  
+                Explorar Cursos  
+            </a>  
+            <button class="w-full sm:w-auto px-12 py-6 glass text-slate-900 rounded-[2rem] font-black text-xl hover:bg-white transition-all active:scale-95">  
+                Saiba Mais  
+            </button>  
+        </div>  
+    </div>  
+
+    <!-- Elementos Decorativos -->  
+    <div class="absolute top-40 left-10 w-72 h-72 bg-primary/5 rounded-full blur-[100px] animate-pulse"></div>  
+    <div class="absolute bottom-10 right-10 w-96 h-96 bg-accent/5 rounded-full blur-[120px] animate-float"></div>  
+</section>  
+
+<!-- Stats Section -->  
+<section class="max-w-7xl mx-auto px-4 py-20">  
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">  
+        <div class="glass p-12 rounded-[3rem] text-center space-y-2 group hover:-translate-y-2 transition-transform">  
+            <div class="text-6xl font-black text-primary">15+</div>  
+            <div class="text-slate-400 font-black uppercase tracking-widest text-xs">Cursos Ativos</div>  
+        </div>  
+        <div class="glass p-12 rounded-[3rem] text-center space-y-2 group hover:-translate-y-2 transition-transform">  
+            <div class="text-6xl font-black text-accent">98%</div>  
+            <div class="text-slate-400 font-black uppercase tracking-widest text-xs">Aprovação no Mercado</div>  
+        </div>  
+        <div class="glass p-12 rounded-[3rem] text-center space-y-2 group hover:-translate-y-2 transition-transform">  
+            <div class="text-6xl font-black text-secondary">2,5k</div>  
+            <div class="text-slate-400 font-black uppercase tracking-widest text-xs">Alunos Formados</div>  
+        </div>  
+    </div>  
+</section>  
+
+<!-- Video Section -->  
+<section class="max-w-7xl mx-auto px-4 py-32">  
+    <div class="relative p-2 bg-gradient-to-br from-primary/20 to-accent/20 rounded-[4rem]">  
+        <div class="bg-white rounded-[3.8rem] overflow-hidden grid grid-cols-1 lg:grid-cols-2 shadow-2xl">  
+            <div class="p-12 lg:p-20 space-y-8 flex flex-col justify-center">  
+                <div class="w-16 h-16 bg-primary text-white rounded-2xl flex items-center justify-center shadow-lg">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">  
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />  
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />  
+                    </svg>  
+                </div>  
+                <h2 class="text-4xl lg:text-5xl font-black text-slate-900 leading-tight">  
+                    Educação que <br/>Gera Resultados.  
+                </h2>  
+                <p class="text-slate-500 text-lg font-medium leading-relaxed">  
+                    Descubra por que milhares de moçambicanos escolhem nossa metodologia. Assista ao nosso vídeo institucional.  
+                </p>  
+                <div class="pt-4 flex items-center gap-6">  
+                    <div class="flex -space-x-4">  
+                        <img src="https://i.pravatar.cc/100?u=1" class="w-12 h-12 rounded-full border-4 border-white" alt="">  
+                        <img src="https://i.pravatar.cc/100?u=2" class="w-12 h-12 rounded-full border-4 border-white" alt="">  
+                        <img src="https://i.pravatar.cc/100?u=3" class="w-12 h-12 rounded-full border-4 border-white" alt="">  
+                    </div>  
+                    <div class="font-black text-primary text-lg">+2,500 Sucessos</div>  
+                </div>  
+            </div>  
+            <div class="aspect-video bg-black relative group cursor-pointer lg:h-full">  
+                <!-- Link do YouTube da Academia Albert -->  
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>  
+            </div>  
+        </div>  
+    </div>  
+</section>  
+
+<!-- Cursos Section -->  
+<section id="cursos" class="max-w-7xl mx-auto px-4 py-32 space-y-16">  
+    <div class="flex flex-col md:flex-row items-end justify-between gap-8 text-center md:text-left">  
+        <div class="space-y-4">  
+            <h2 class="text-5xl font-black text-slate-900">Nossos Cursos</h2>  
+            <p class="text-slate-500 font-medium">Formação técnica e profissional com os melhores especialistas.</p>  
+        </div>  
+        <button class="px-8 py-4 glass rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Ver Todos</button>  
+    </div>  
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">  
+        <!-- Curso 1 -->  
+        <div class="group bg-white rounded-[3rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all">  
+            <div class="h-64 overflow-hidden relative">  
+                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="">  
+                <div class="absolute top-6 left-6 px-4 py-2 bg-white/90 rounded-2xl text-[10px] font-black uppercase tracking-widest text-primary glass">GESTÃO</div>  
+            </div>  
+            <div class="p-10 space-y-6">  
+                <h3 class="text-3xl font-black text-slate-900 group-hover:text-primary transition-colors">Contabilidade Prática</h3>  
+                <p class="text-slate-500 font-medium">Domine a gestão financeira empresarial do zero ao avançado.</p>  
+                <div class="pt-8 border-t border-slate-50 flex items-center justify-between">  
+                    <div class="text-3xl font-black text-primary">12.000 MT</div>  
+                    <button class="w-12 h-12 bg-slate-900 text-white rounded-xl flex items-center justify-center group-hover:bg-primary transition-all">  
+                        →  
+                    </button>  
+                </div>  
+            </div>  
+        </div>  
+
+        <!-- Curso 2 -->  
+        <div class="group bg-white rounded-[3rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all">  
+            <div class="h-64 overflow-hidden relative">  
+                <img src="https://images.unsplash.com/photo-1600857062241-98e5dba7f214?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="">  
+                <div class="absolute top-6 left-6 px-4 py-2 bg-white/90 rounded-2xl text-[10px] font-black uppercase tracking-widest text-primary glass">EMPREENDEDORISMO</div>  
+            </div>  
+            <div class="p-10 space-y-6">  
+                <h3 class="text-3xl font-black text-slate-900 group-hover:text-primary transition-colors">Saboaria Profissional</h3>  
+                <p class="text-slate-500 font-medium">Crie sua própria marca de sabonetes artesanais e terapêuticos.</p>  
+                <div class="pt-8 border-t border-slate-50 flex items-center justify-between">  
+                    <div class="text-3xl font-black text-primary">8.500 MT</div>  
+                    <button class="w-12 h-12 bg-slate-900 text-white rounded-xl flex items-center justify-center group-hover:bg-primary transition-all">  
+                        →  
+                    </button>  
+                </div>  
+            </div>  
+        </div>  
+
+        <!-- Curso 3 -->  
+        <div class="group bg-white rounded-[3rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all">  
+            <div class="h-64 overflow-hidden relative">  
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="">  
+                <div class="absolute top-6 left-6 px-4 py-2 bg-white/90 rounded-2xl text-[10px] font-black uppercase tracking-widest text-primary glass">SAÚDE</div>  
+            </div>  
+            <div class="p-10 space-y-6">  
+                <h3 class="text-3xl font-black text-slate-900 group-hover:text-primary transition-colors">Auxiliar de Saúde</h3>  
+                <p class="text-slate-500 font-medium">Formação intensiva para o mercado de saúde em Moçambique.</p>  
+                <div class="pt-8 border-t border-slate-50 flex items-center justify-between">  
+                    <div class="text-3xl font-black text-primary">25.000 MT</div>  
+                    <button class="w-12 h-12 bg-slate-900 text-white rounded-xl flex items-center justify-center group-hover:bg-primary transition-all">  
+                        →  
+                    </button>  
+                </div>  
+            </div>  
+        </div>  
+    </div>  
+</section>  
+
+<!-- Footer -->  
+<footer class="bg-slate-900 text-slate-300 py-24">  
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12">  
+        <div>  
+            <div class="flex items-center mb-8">  
+                <div class="w-8 h-8 gradient-primary rounded-lg flex items-center justify-center text-white font-bold mr-2">A</div>  
+                <span class="text-xl font-bold text-white tracking-tight">Academia Albert</span>  
+            </div>  
+            <p class="text-slate-500">Transformando o futuro de Moçambique através da educação de excelência.</p>  
+        </div>  
+        <div>  
+            <h4 class="text-white font-bold mb-8">Navegação</h4>  
+            <ul class="space-y-4 font-medium">  
+                <li><a href="#" class="hover:text-white transition-colors">Sobre Nós</a></li>  
+                <li><a href="#" class="hover:text-white transition-colors">Termos de Uso</a></li>  
+                <li><a href="#" class="hover:text-white transition-colors">Privacidade</a></li>  
+            </ul>  
+        </div>  
+        <div>  
+            <h4 class="text-white font-bold mb-8">Contacto</h4>  
+            <ul class="space-y-4 font-medium">  
+                <li>Maputo, Moçambique</li>  
+                <li>+258 84 426 5435</li>  
+                <li>academiaalbert@gmail.com</li>  
+            </ul>  
+        </div>  
+        <div>  
+            <h4 class="text-white font-bold mb-8">Redes Sociais</h4>  
+            <div class="flex space-x-4">  
+                <div class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">F</div>  
+                <div class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">I</div>  
+                <div class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">W</div>  
+            </div>  
+        </div>  
+    </div>  
+    <div class="max-w-7xl mx-auto px-4 mt-20 pt-8 border-t border-slate-800 text-center text-sm font-bold text-slate-600">  
+        © 2024 ACADEMIA ALBERT - MOÇAMBIQUE. TODOS OS DIREITOS RESERVADOS.  
+    </div>  
+</footer>  
+
+<!-- Chat Bot Floating Button -->  
+<div class="fixed bottom-8 right-8 z-[200]">  
+    <button id="chat-btn" class="w-16 h-16 gradient-primary rounded-full shadow-2xl flex items-center justify-center text-white hover:scale-110 transition-all hover:rotate-12">  
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">  
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />  
+        </svg>  
+    </button>  
+</div>  
+
+<!-- Script de Interação -->  
+<script>  
+    // Navbar scroll effect  
+    window.addEventListener('scroll', () => {  
+        const nav = document.getElementById('navbar');  
+        if (window.scrollY > 20) {  
+            nav.classList.remove('py-8');  
+            nav.classList.add('py-4');  
+        } else {  
+            nav.classList.add('py-8');  
+            nav.classList.remove('py-4');  
+        }  
+    });  
+
+    // Mobile Menu Toggle  
+    const menuBtn = document.getElementById('menu-btn');  
+    const mobileMenu = document.getElementById('mobile-menu');  
+    const closeMenu = document.getElementById('close-menu');  
+
+    menuBtn.addEventListener('click', () => {  
+        mobileMenu.classList.remove('hidden');  
+    });  
+
+    closeMenu.addEventListener('click', () => {  
+        mobileMenu.classList.add('hidden');  
+    });  
+
+    // Clique nos links do menu mobile fecha o menu  
+    mobileMenu.querySelectorAll('a').forEach(link => {  
+        link.addEventListener('click', () => {  
+            mobileMenu.classList.add('hidden');  
+        });  
+    });  
+
+    // Simulação de Chat Alert  
+    document.getElementById('chat-btn').addEventListener('click', () => {  
+        alert('Albert AI: Olá! Como posso ajudar na sua formação em Moçambique hoje?');  
+    });  
+</script>
+
+</body>  
+</html>  Olá será que esse código é o código da minha academia?
